@@ -158,7 +158,8 @@ The notebook outputs the results in the Notebook which can be copied to clipboar
 The Training model Prediction accuracy is output in section 5.2
 The overall prediction accuracy is output as a percentage
 
-![png](doc/images/ipredict_train_model.png)
+![png](doc/images/ipredict_train_model.png)  
+
 If you are satisfied with the Training model accuracy, you can proceed further for scoring the Test data using the Trained model and analyze the results
 The Confusion matrix is computed on the results of the Testing for a dep dive understanding of the Model performance
 
