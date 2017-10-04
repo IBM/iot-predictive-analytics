@@ -59,17 +59,17 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 ## 5.1	Sign up for the Data Science Experience
 
-Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services: DSX-Spark and DSX-ObjectStore will be created in your Bluemix account.  
+Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services: ``DSX-Spark`` and ``DSX-ObjectStore`` will be created in your Bluemix account.  
 
 ## 5.2	Create Bluemix services
 Create the Bluemix services by following the links below.
 [Object Storage in Bluemix](https://console.ng.bluemix.net/catalog/services/object-storage)
 
-  i.	Choose an appropriate name for the DB2 Warehouse Service Name and choose Free Pricing Plan. Click on Create.
+  i.	Choose an appropriate name for the DB2 Warehouse ``Service Name`` and choose  ``Free`` Pricing Plan. Click on Create.
   
 ![png](doc/images/ipredict_db2_service_create.png)  
   
-  ii.	Click on Object Storage service instance on Bluemix Dashboard. Choose the region and create a Container unit using Add a container link.  
+  ii.	Click on Object Storage service instance on ``Bluemix Dashboard``. Choose the ``region`` and create a Container unit using ``Add a container`` link.  
 ![png](doc/images/ipredict_db2_object_storage.png)
   
   iii.	Upload the [sample data file](https://github.com/IBM/iot-predictive-analytics/blob/master/data/iot_sensor_dataset.csv) in Object storage Container.
@@ -78,36 +78,36 @@ Create the Bluemix services by following the links below.
 * [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)  
 ![png](doc/images/ipredict_db2_whse_oncloud.png)  
   
-    i.	Once service is created, click on DB2 Warehouse on Cloud service instance on Bluemix Dashboard. Click Open to launch the Dashboard.
-    ii.	Load data into the DB2 Warehouse by selecting the sample data from My Computer -> browse files.
+    i.	Once service is created, click on ``DB2 Warehouse on Cloud`` service instance on Bluemix Dashboard. Click ``Open`` to launch the Dashboard.
+    ii.	``Load data`` into the DB2 Warehouse by selecting the sample data from ``My Computer -> browse files``.
     ![png](doc/images/ipredict_db2_browse_file.png)
-    iii.	Click on Next from the panel, choose schema and then create a New Table.
+    iii.	Click on ``Next`` from the panel, choose schema and then create a ``New Table``.
     ![png](doc/images/ipredict_db2_create_table1.png)
 
 * [**Data Science Experience**](https://console.bluemix.net/catalog/services/data-science-experience)  
 ![png](doc/images/ipredict_dsx_experience_create.png)  
 
 ## 5.3	Create the Python Jupyter Notebook
-Use the menu on the left to select My Projects and then Default Project. Click on Add notebooks (upper right) to create a notebook.
-*	Select the From URL tab.
+Use the menu on the left to select ``My Projects`` and then ``Default Project``. Click on Add notebooks (upper right) to create a notebook.
+*	Select the ``From URL`` tab.
 *	Enter a name for the notebook.
 *	Optionally, enter a description for the notebook.
 *	Enter this Notebook URL:
 https://github.com/IBM/iot-predictive-analytics/blob/master/notebook/watson_iotfailure_prediction.ipynb
-*	Click the Create Notebook button.
+*	Click the ``Create Notebook`` button.
     ![png](doc/images/ipredict_dsx_notebook_create.png)
 * Upload the sample .json DSX configuration file to Object storage from URL:
     https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json
 
 ## 5.4	Add the configuration and data access details
 Fix-up configuration parameter .json file name and values
-Once the files have been uploaded into DSX-ObjectStore you need to update the variables that refer to the .json configuration files in the R - Jupyter Notebook.
+Once the files have been uploaded into ``DSX-ObjectStore`` you need to update the variables that refer to the .json configuration files in the R - Jupyter Notebook.
 In the notebook, update the DSX configuration .json file name in section 3.1.1 
   
 ![png](doc/images/ipredict_set_json_filename.png)
   
 Edit the [DSX configuration .json file](https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json)
-Update the paramvalue ONLY to suit your requirements and save the .json file
+Update the ``paramvalue`` ONLY to suit your requirements and save the .json file
 Retain the rest of the format and composition of the .json file
   
 ![png](doc/images/ipredict_json_file_sample.png)
@@ -123,10 +123,17 @@ iii.	data_size: Percentage of sample data to be reserved for Testing in decimal 
 * Also replace the function name in the block that Read json configuration file in section 3.2
 
 ![png](doc/images/ipredict_insert_dataconn.png)
+![png](doc/images/ipredict_insert_filecreds.png)
+
+#### Add the data and configuration to the notebook
+Use ``Find and Add Data`` (look for the ``10/01`` icon) and its ``Connections`` tab. You must be able to see your database connection created earlier. From there you can click ``Insert to Code`` under the 'Data connection' list and add ibm DBR code with connection credentials to the flow.
+
+![png](doc/images/ipredict_insert_dataconn2.png)
 
 Note: If you don't have your own data and configuration files, you can reuse our example in the "Read IoT Sensor data from database" section. Look in the /data/iot_sensor_dataset.csv directory for data file.
-
-![png](doc/images/ipredict_read_data_4m_db.png)
+  
+![png](doc/images/ipredict_insert_read_data_func.png)
+  
 
 # 6	Run the notebook
 When a notebook is executed, what is actually happening is that each code cell in
