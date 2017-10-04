@@ -17,7 +17,7 @@ When you have completed this journey, you will understand how to
 *	Evaluate the Model’s Predictive performance further by computing a Confusion matrix
 *	Rerun experiments by changing the configuration parameters
 
-![png](doc/source/images/ipredict_arch_flow.png)
+![png](doc/images/ipredict_arch_flow.png)
 
 #### Steps:
 1.	User signs up for IBM Data Science experience
@@ -67,26 +67,26 @@ Create the Bluemix services by following the links below.
 
   i.	Choose an appropriate name for the DB2 Warehouse Service Name and choose Free Pricing Plan. Click on Create.
 
-![png](doc/source/images/ipredict_db2_service_create.png)
+![png](doc/images/ipredict_db2_service_create.png)
 
   ii.	Click on Object Storage service instance on Bluemix Dashboard. Choose the region and create a Container unit using Add a container link.
-![png](doc/source/images/ipredict_db2_object_storage.png)
+![png](doc/images/ipredict_db2_object_storage.png)
 
   iii.	Upload the [sample data file](https://github.com/IBM/iot-predictive-analytics/blob/master/data/iot_sensor_dataset.csv) in Object storage Container.
   
   
   
 * [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)
-![png](doc/source/images/ipredict_db2_whse_oncloud.png)
+![png](doc/images/ipredict_db2_whse_oncloud.png)
 
     i.	Once service is created, click on DB2 Warehouse on Cloud service instance on Bluemix Dashboard. Click Open to launch the Dashboard.
     ii.	Load data into the DB2 Warehouse by selecting the sample data from My Computer -> browse files.
-    ![png](doc/source/images/ipredict_db2_browse_file.png)
+    ![png](doc/images/ipredict_db2_browse_file.png)
     iii.	Click on Next from the panel, choose schema and then create a New Table.
-    ![png](doc/source/images/ipredict_db2_create_table1.png)
+    ![png](doc/images/ipredict_db2_create_table1.png)
 
 * [**Data Science Experience**](https://console.bluemix.net/catalog/services/data-science-experience)
-![png](doc/source/images/ipredict_dsx_experience_create.png)
+![png](doc/images/ipredict_dsx_experience_create.png)
 
 ## 5.3	Create the Python Jupyter Notebook
 Use the menu on the left to select My Projects and then Default Project. Click on Add notebooks (upper right) to create a notebook.
@@ -96,7 +96,7 @@ Use the menu on the left to select My Projects and then Default Project. Click o
 *	Enter this Notebook URL:
 https://github.com/IBM/iot-predictive-analytics/blob/master/notebook/watson_iotfailure_prediction.ipynb
 *	Click the Create Notebook button.
-    ![png](doc/source/images/ipredict_dsx_notebook_create.png)
+    ![png](doc/images/ipredict_dsx_notebook_create.png)
 * Upload the sample .json DSX configuration file to Object storage from URL:
     https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json
 
@@ -105,13 +105,13 @@ Fix-up configuration parameter .json file name and values
 Once the files have been uploaded into DSX-ObjectStore you need to update the variables that refer to the .json configuration files in the R - Jupyter Notebook.
 In the notebook, update the DSX configuration .json file name in section 3.1.1 
   
-![png](doc/source/images/ipredict_set_json_filename.png)
+![png](doc/images/ipredict_set_json_filename.png)
   
 Edit the [DSX configuration .json file](https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json)
 Update the paramvalue ONLY to suit your requirements and save the .json file
 Retain the rest of the format and composition of the .json file
   
-![png](doc/source/images/ipredict_json_file_sample.png)
+![png](doc/images/ipredict_json_file_sample.png)
     
 The descriptions of the parameters that can be configured are as below.
 
@@ -123,11 +123,11 @@ iii.	data_size: Percentage of sample data to be reserved for Testing in decimal 
 * In section 3.1.2 of DSX notebook, Insert (replace) your own Object storage file credentials to read the .json configuration file
 * Also replace the function name in the block that Read json configuration file in section 3.2
 
-![png](doc/source/images/ipredict_insert_dataconn.png)
+![png](doc/images/ipredict_insert_dataconn.png)
 
 Note: If you don't have your own data and configuration files, you can reuse our example in the "Read IoT Sensor data from database" section. Look in the /data/iot_sensor_dataset.csv directory for data file.
 
-![png](doc/source/images/ipredict_read_data_4m_db.png)
+![png](doc/images/ipredict_read_data_4m_db.png)
 
 # 6	Run the notebook
 When a notebook is executed, what is actually happening is that each code cell in
@@ -159,11 +159,11 @@ The notebook outputs the results in the Notebook which can be copied to clipboar
 The Training model Prediction accuracy is output in section 5.2
 The overall prediction accuracy is output as a percentage
 
-![png](doc/source/images/ipredict_train_model.png)
+![png](doc/images/ipredict_train_model.png)
 If you are satisfied with the Training model accuracy, you can proceed further for scoring the Test data using the Trained model and analyze the results
 The Confusion matrix is computed on the results of the Testing for a dep dive understanding of the Model performance
 
-![png](doc/source/images/ipredict_confusion_matrix.png)
+![png](doc/images/ipredict_confusion_matrix.png)
 
 Overall accuracy percentage gives the overall Prediction performance of the model.
 The False positives and False Negatives are also listed to give the user an idea of the errors in the model. It can be checked if these are within thresholds for the specific application of the model or IoT equipment.
