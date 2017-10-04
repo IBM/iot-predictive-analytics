@@ -59,24 +59,24 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 ## 5.1	Sign up for the Data Science Experience
 
-Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services: DSX-Spark and DSX-ObjectStore will be created in your Bluemix account.
+Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services: DSX-Spark and DSX-ObjectStore will be created in your Bluemix account.  
 
 ## 5.2	Create Bluemix services
 Create the Bluemix services by following the links below.
 [Object Storage in Bluemix](https://console.ng.bluemix.net/catalog/services/object-storage)
 
   i.	Choose an appropriate name for the DB2 Warehouse Service Name and choose Free Pricing Plan. Click on Create.
-
-![png](doc/images/ipredict_db2_service_create.png)
-
-  ii.	Click on Object Storage service instance on Bluemix Dashboard. Choose the region and create a Container unit using Add a container link.
+  
+![png](doc/images/ipredict_db2_service_create.png)  
+  
+  ii.	Click on Object Storage service instance on Bluemix Dashboard. Choose the region and create a Container unit using Add a container link.  
 ![png](doc/images/ipredict_db2_object_storage.png)
-
+  
   iii.	Upload the [sample data file](https://github.com/IBM/iot-predictive-analytics/blob/master/data/iot_sensor_dataset.csv) in Object storage Container.
 
   
-* [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)
-![png](doc/images/ipredict_db2_whse_oncloud.png)
+* [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)  
+![png](doc/images/ipredict_db2_whse_oncloud.png)  
   
     i.	Once service is created, click on DB2 Warehouse on Cloud service instance on Bluemix Dashboard. Click Open to launch the Dashboard.
     ii.	Load data into the DB2 Warehouse by selecting the sample data from My Computer -> browse files.
@@ -84,8 +84,8 @@ Create the Bluemix services by following the links below.
     iii.	Click on Next from the panel, choose schema and then create a New Table.
     ![png](doc/images/ipredict_db2_create_table1.png)
 
-* [**Data Science Experience**](https://console.bluemix.net/catalog/services/data-science-experience)
-![png](doc/images/ipredict_dsx_experience_create.png)
+* [**Data Science Experience**](https://console.bluemix.net/catalog/services/data-science-experience)  
+![png](doc/images/ipredict_dsx_experience_create.png)  
 
 ## 5.3	Create the Python Jupyter Notebook
 Use the menu on the left to select My Projects and then Default Project. Click on Add notebooks (upper right) to create a notebook.
