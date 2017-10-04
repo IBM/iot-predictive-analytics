@@ -122,13 +122,13 @@ iii.	data_size: Percentage of sample data to be reserved for Testing in decimal 
 * In section 3.1.2 of DSX notebook, Insert (replace) your own Object storage file credentials to read the .json configuration file
 * Also replace the function name in the block that Read json configuration file in section 3.2
 
-![png](doc/images/ipredict_insert_dataconn.png)
+![png](doc/images/ipredict_insert_jsonconn.png)
 ![png](doc/images/ipredict_insert_filecreds.png)
 
 #### Add the data and configuration to the notebook
 Use ``Find and Add Data`` (look for the ``10/01`` icon) and its ``Connections`` tab. You must be able to see your database connection created earlier. From there you can click ``Insert to Code`` under the 'Data connection' list and add ibm DBR code with connection credentials to the flow.
 
-![png](doc/images/ipredict_insert_dataconn2.png)
+![png](doc/images/ipredict_insert_dataconn.png)
 
 Note: If you don't have your own data and configuration files, you can reuse our example in the "Read IoT Sensor data from database" section. Look in the /data/iot_sensor_dataset.csv directory for data file.
   
