@@ -73,12 +73,11 @@ Create the Bluemix services by following the links below.
 ![png](doc/images/ipredict_db2_object_storage.png)
 
   iii.	Upload the [sample data file](https://github.com/IBM/iot-predictive-analytics/blob/master/data/iot_sensor_dataset.csv) in Object storage Container.
-  
-  
+
   
 * [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)
 ![png](doc/images/ipredict_db2_whse_oncloud.png)
-
+  
     i.	Once service is created, click on DB2 Warehouse on Cloud service instance on Bluemix Dashboard. Click Open to launch the Dashboard.
     ii.	Load data into the DB2 Warehouse by selecting the sample data from My Computer -> browse files.
     ![png](doc/images/ipredict_db2_browse_file.png)
