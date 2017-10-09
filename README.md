@@ -173,7 +173,7 @@ The Confusion matrix is computed on the results of the Testing for a dep dive un
 ![png](doc/images/ipredict_confusion_matrix.png)
 
 Overall accuracy percentage gives the overall Prediction performance of the model.
-The False positives and False Negatives are also listed to give the user an idea of the errors in the model. It can be checked if these are within thresholds for the specific application of the model or IoT equipment.
+Sensitivity and Specificity of the model is also calculated along with absolute values of False positives and False Negatives to give the user an idea of the errors in the model. It can be checked if these are within thresholds for the specific application of the model or IoT equipment.
   
 # 8 Troubleshooting
 
