@@ -167,13 +167,14 @@ The overall prediction accuracy is output as a percentage
 
 ![png](doc/images/ipredict_train_model.png)  
 
-If you are satisfied with the Training model accuracy, you can proceed further for scoring the Test data using the Trained model and analyze the results
-The Confusion matrix is computed on the results of the Testing for a dep dive understanding of the Model performance
+If you are satisfied with the Training model accuracy, you can proceed further for scoring the Test data using the Trained model and analyze the results  
+The Confusion matrix is computed on the results of the Testing for a dep dive understanding of the Model performance  
 
-![png](doc/images/ipredict_confusion_matrix.png)
+![png](doc/images/ipredict_confusion_matrix.png)  
 
-Overall accuracy percentage gives the overall Prediction performance of the model.
-Sensitivity and Specificity of the model is also calculated along with absolute values of False positives and False Negatives to give the user an idea of the errors in the model. It can be checked if these are within thresholds for the specific application of the model or IoT equipment.
+Overall accuracy percentage gives the overall Prediction performance of the model.  
+Sensitivity and Specificity of the model is also calculated along with absolute values of False positives and False Negatives to give the Data Scientist / Analyst an idea of predictive accuracy in the model.  
+It can be checked if these are within thresholds for the specific application of the model or IoT equipment.  
   
 # 8 Troubleshooting
 
