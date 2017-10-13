@@ -45,7 +45,7 @@ When you have completed this journey, you will understand how to
 * [Data Science](https://developer.ibm.com/code/technologies/data-science?cm=IBMCode-_--_-featured_technologies-_-data-science):Systems and scientific methods to analyze structured and unstructured data in order to extract knowledge and insights.
 
 # 4	Watch the Video
-[Video Coming soon](Coming soon video url)
+* [Video](https://youtu.be/k8uPYd3jUFs)
 
 # 5 Steps
 
