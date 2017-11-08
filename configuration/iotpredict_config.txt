@@ -1,0 +1,14 @@
+[
+	{
+	"paramname": "features",
+		"paramvalue": "['atemp', 'PID', 'outpressure', 'inpressure', 'temp']"
+	},
+	{
+	"paramname": "target",
+		"paramvalue": "fail"
+	},
+	{
+	"paramname": "data_size",
+		"paramvalue": "0.7"
+	}
+]
