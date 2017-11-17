@@ -213,14 +213,14 @@ The steps below explain that.
   
 
 * This step will auto generate a function that reads the data followed by a call to the function as below:  
- 1. ``def get_object_storage_file_with_credentials_<alphanumeric characters>(container, filename):``  
- 2. ``data_1 = get_object_storage_file_with_credentials_<alphanumeric characters>('IoTPredictive', 'iotpredict_config.txt')``   
-Rename the function by removing the <alphanumeric characters> to "get_object_storage_file_with_credentials(..., ...)"  
+   1. ``def get_object_storage_file_with_credentials_<alphanumeric characters>(container, filename):``  
+   2. ``data_1 = get_object_storage_file_with_credentials_<alphanumeric characters>('IoTPredictive', 'iotpredict_config.txt')``   
+Rename the function by removing the alphanumeric characters to "get_object_storage_file_with_credentials(container, filename)"  
 Delete the second part, that calls the function and reads the data. This is done elsewhere in the code you have imported  
    
    
 * Go to section 3.2 (cell In [7]) and do the following:
-   1. Update the name of the function in section 3.2 of the DSX Jupyter notebook also to "get_object_storage_file_with_credentials(..., ...)". 
+   1. Update the name of the function in section 3.2 of the DSX Jupyter notebook also to "get_object_storage_file_with_credentials()". 
    2. The container name used in the sample code is "IoTPredictive". Change the container name if it is different for you. 
       ![png](doc/images/ipredict_insert_filecreds.png)  
    3. Update the second parameter ('iotpredict_config.txt' in sample code) to ``v_sampleConfigFileName``  
