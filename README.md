@@ -77,25 +77,33 @@ Once you are familiar with the entire flow of this Pattern, you can use your own
 
 ### 5.2.2  Create a DB2 Warehouse on IBM Cloud
 
-  i.	Click on ``DB2 Warehouse on Cloud`` service instance on Bluemix Dashboard. Click ``Open`` to launch the Dashboard.
+If you are not already familiar with how to create, access data from Data store in DSX, get yourself familiarised by following this documentation.  
+[Add data to project](https://datascience.ibm.com/docs/content/manage-data/add-data-project.html)
+
+Topics related to Data creation and access that will be specifically helpful in this Pattern are as below  
+* [Create connections to databases](https://datascience.ibm.com/docs/content/manage-data/dw08.html)  
+* [Load and access data in a notebook](https://datascience.ibm.com/docs/content/analyze-data/load-and-access-data.html?linkInPage=true)  
+  
+  
+i.	Click on ``DB2 Warehouse on Cloud`` Service Instance on Bluemix Dashboard. Click ``Open`` to launch the Dashboard.
 [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)  
 ![png](doc/images/ipredict_db2_whse_oncloud.png)  
 
   Note: Data will loaded into a DB2 database instead of reading directly from the .csv file.
   This is done to ensure end to end consistency of Solution architecture when combined with other IoT IBM Patterns.  
 
-  ii.	Choose an appropriate name for the DB2 Warehouse ``Service Name`` and choose  ``Free`` Pricing Plan. Click on Create.
+ii.	Choose an appropriate name for the DB2 Warehouse ``Service Name`` and choose  ``Free`` Pricing Plan. Click on Create.
   
 ![png](doc/images/ipredict_db2_service_create.png)  
   
-  iii.	Click on Object Storage service instance on ``Bluemix Dashboard``. You must be able to see the DB2 Warehouse service you created in the previous step. Click on the service name from the list. Once you are in the Service details page, click on ``Open`` button.
+iii.	Click on DB2 Warehouse on cloud instance on ``Bluemix Dashboard``. You must be able to see the DB2 Warehouse service you created in the previous step. Click on the service name from the list. Once you are in the Service details page, click on ``Open`` button.
 ![png](doc/images/ipredict_db2_object_storage.png)  
 
 
-  iv.	``Load data`` which is downloaded in step 5.2.1 into a DB2 Warehouse table by selecting the sample data from ``My Computer -> browse files``.
+iv.	``Load data`` which is downloaded in step 5.2.1 into a DB2 Warehouse table by selecting the sample data from ``My Computer -> browse files``.
     ![png](doc/images/ipredict_db2_browse_file.png)
   
-  v.	Click on ``Next`` from the panel, choose schema and then create a ``New Table``.
+v.	Click on ``Next`` from the panel, choose schema and then create a ``New Table``.
     ![png](doc/images/ipredict_db2_create_table1.png)
   
 
@@ -104,23 +112,23 @@ Once you are familiar with the entire flow of this Pattern, you can use your own
 
 ### 5.2.3 Create DB2 Warehouse Connection in DSX  
 
-We need to access the data we just uploaded into the DB2 Warehouse database into DSX to run the analysis.  
+We need to link the data we just uploaded into the DB2 Warehouse database with DSX in order to run the analysis.  
 Below are the steps to add a connection to access the data in DSX Python Jupyter notebook.  
 
-   i. Navigate to ``DSX -> My Project -> Your IoT Predictive Project name``  
+   i. Navigate to DSX ``Project -> "ViewAll Project" -> pick your project``  
   ii. Choose ``Data Services -> Connections`` menu  
  iii. Click on the ``Create Connection`` button  
 
   ![png](doc/images/ipredict_db2_create_conn1.png)  
 
   iv. Give a name for your DSX Data connection  
-   v. Choose ``Service instance`` as the name of the DB2 warehouse service name you create earlier  
+   v. Choose ``Service instance`` as the name of the DB2 warehouse service name you created earlier and Click ``Create``  
    
   ![png](doc/images/ipredict_db2_create_conn2.png)  
 
   vi. Navigate back to ``DSX -> My Project -> Your IoT Predictive Project name``  
  vii. Click on the Find and add data icon ``1010`` on top right  
-viii. Click on the check box next to the DB2 warehouse Data connection you just created and click ``Apply``  
+viii. Click on ``Connection tab`` the check box next to the DB2 warehouse Data connection you just created and click ``Apply``  
   ix. Now the new connection is added to your DSX IoT Predictive project  
   
   ![png](doc/images/ipredict_db2_create_conn3.png)  
@@ -190,13 +198,41 @@ ii.	target: Target variable name that needs to be predicted ‘y’ with values 
 iii.	data_size: Percentage of sample data to be reserved for Testing in decimal form.
       Example: 0.7 indicates 70% of the data will be used for Training the model and 30% will be used as Test  data
 
+* The cell 3.1.2 of the DSX Jupyter notebook has a function definition which is shown for illustration purposes.  
+These details that have user specific security details are striked out in the screenshots shown below.  
+This function will need to be recreated with your user specific access credentials ang target data object.  
+In order to do that first delete all pre existing code in cell 3.1.2 of the notebook.  
+  
+Note: The .pynb file that you imported have code with dummy credentials for illustration purposes.  
+This needs to be replaced by your user specific function with your own access credentials.  
+The steps below explain that.  
+  
+
 * In section 3.1.2 of DSX Jupyter notebook (not this README file), Insert (replace) your own Object storage file credentials to read the 'iotpredict_config.txt' configuration file  
 ![png](doc/images/ipredict_insert_jsonconn.png)  
-* Replace the function name in the block that read json configuration file in section 3.2 of DSX Jupyter notebook <inputfo = get_object_storage_file_with_credentials_123xyz()>. This must correspond to the one newly created function name in the previous step. For example, if the name of the function created after the Insert Object storage file credentials is 'get_object_storage_file_with_credentials_123xyz(..)' then replace the name of the function in section 3.2 of the DSX Jupyter notebook also to this.  
-* The container name used in the sample code is "IoTPredictive". Change the container name if it is different for you. 
-![png](doc/images/ipredict_insert_filecreds.png)  
+  
 
-Note: Once you are done with the above steps, delete all old code (in these 2 DSX Jupyter notebook cells ONLY) from the sample .pynb file to avoid errors  
+* This step will auto generate a function that reads the data followed by a call to the function as below:  
+ 1. ``def get_object_storage_file_with_credentials_<alphanumeric characters>(container, filename):``  
+ 2. ``data_1 = get_object_storage_file_with_credentials_<alphanumeric characters>('IoTPredictive', 'iotpredict_config.txt')``   
+Rename the function by removing the <alphanumeric characters> to "get_object_storage_file_with_credentials(..., ...)"  
+Delete the second part, that calls the function and reads the data. This is done elsewhere in the code you have imported  
+   
+   
+* Go to section 3.2 (cell In [7]) and do the following:
+   1. Update the name of the function in section 3.2 of the DSX Jupyter notebook also to "get_object_storage_file_with_credentials(..., ...)". 
+   2. The container name used in the sample code is "IoTPredictive". Change the container name if it is different for you. 
+      ![png](doc/images/ipredict_insert_filecreds.png)  
+   3. Update the second parameter ('iotpredict_config.txt' in sample code) to ``v_sampleConfigFileName``  
+  The modified code in this cell should look like below,
+
+  ``inputfo = get_object_storage_file_with_credentials('IoTPredictive', v_sampleConfigFileName)``  
+  ``d = json.load(inputfo)``  
+
+Refer to screen shot above for details.  
+For more details, revisit the documentation help links provided in beginning of section 5.2.2  
+ 
+
   
 #### Add the data and configuration to the notebook
 Use ``Find and Add Data`` (look for the ``10/01`` icon) and its ``Connections`` tab. You must be able to see your database connection created earlier. From there you can click ``Insert to Code`` under the 'Data connection' list and add ibm DBR code with connection credentials to the flow.
