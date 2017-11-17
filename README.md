@@ -115,7 +115,7 @@ v.	Click on ``Next`` from the panel, choose schema and then create a ``New Table
 We need to link the data we just uploaded into the DB2 Warehouse database with DSX in order to run the analysis.  
 Below are the steps to add a connection to access the data in DSX Python Jupyter notebook.  
 
-   i. Navigate to DSX ``Project -> "ViewAll Project" -> pick your project``  
+   i. Navigate to DSX ``Project -> ViewAll Project -> pick your project``  
   ii. Choose ``Data Services -> Connections`` menu  
  iii. Click on the ``Create Connection`` button  
 
@@ -126,7 +126,7 @@ Below are the steps to add a connection to access the data in DSX Python Jupyter
    
   ![png](doc/images/ipredict_db2_create_conn2.png)  
 
-  vi. Navigate back to ``DSX -> My Project -> Your IoT Predictive Project name``  
+  vi. Navigate back to ``Project -> ViewAll Project -> pick your project``  
  vii. Click on the Find and add data icon ``1010`` on top right  
 viii. Click on ``Connection tab`` the check box next to the DB2 warehouse Data connection you just created and click ``Apply``  
   ix. Now the new connection is added to your DSX IoT Predictive project  
