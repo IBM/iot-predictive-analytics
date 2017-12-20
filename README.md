@@ -24,7 +24,8 @@ When you have completed this pattern, you will understand how to
 2.	User loads the sample IoT sensor Time series data to database
 3.	A configuration file holds all the key parameters for running the IoT Time series prediction algorithm
 4.	The prediction algorithm written in Python 2.0 Jupyter notebook uses the Configuration parameters and Sensor data from DB
-5.	The outputs of the prediction algorithm is saved in Object storage for consumption
+5.	Python Notebook runs on Spark in IBM DSX to ensure performance and scalability
+6.  The outputs of the prediction algorithm is saved in Object storage for consumption
 
 #### Developers can reuse all components that support the above steps like
 1.	Reading IoT Sensor data from DB
