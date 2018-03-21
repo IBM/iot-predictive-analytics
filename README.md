@@ -199,7 +199,7 @@ ii.	target: Target variable name that needs to be predicted ‘y’ with values 
 iii.	data_size: Percentage of sample data to be reserved for Testing in decimal form.
       Example: 0.7 indicates 70% of the data will be used for Training the model and 30% will be used as Test  data
 
-* The cell 3.1.2 of the Watson Studio Jupyter notebook has a function definition which is shown for illustration purposes.  
+* The cell 3.1.2 of the Jupyter Notebook has a function definition which is shown for illustration purposes.  
 These details that have user specific security details are striked out in the screenshots shown below.  
 This function will need to be recreated with your user specific access credentials ang target data object.  
 In order to do that first delete all pre existing code in cell 3.1.2 of the notebook.  
@@ -209,7 +209,7 @@ This needs to be replaced by your user specific function with your own access cr
 The steps below explain that.  
   
 
-* In section 3.1.2 of Watson Studio Jupyter notebook (not this README file), Insert (replace) your own Object storage file credentials to read the 'iotpredict_config.txt' configuration file  
+* In section 3.1.2 of Jupyter Notebook (not this README file), Insert (replace) your own Object storage file credentials to read the 'iotpredict_config.txt' configuration file  
 ![png](doc/images/ipredict_insert_jsonconn.png)  
   
 
@@ -221,7 +221,7 @@ Delete the second part, that calls the function and reads the data. This is done
    
    
 * Go to section 3.2 (cell In [7]) and do the following:
-   1. Update the name of the function in section 3.2 of the Watson Studio Jupyter notebook also to "get_object_storage_file_with_credentials()". 
+   1. Update the name of the function in section 3.2 of the Jupyter Notebook also to "get_object_storage_file_with_credentials()". 
    2. The container name used in the sample code is "IoTPredictive". Change the container name if it is different for you. 
       ![png](doc/images/ipredict_insert_filecreds.png)  
    3. Update the second parameter ('iotpredict_config.txt' in sample code) to ``v_sampleConfigFileName``  
