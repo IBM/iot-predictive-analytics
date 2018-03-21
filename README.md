@@ -61,7 +61,7 @@ Follow these steps to setup and run this IBM Pattern. The steps are described in
 
 ## 5.1	Sign up for the Watson Studio
 
-Sign up for IBM's [Watson Studio](http://datascience.ibm.com/). By signing up for the Watson Studio, two services: ``Apache Spark`` and ``Object Storage`` will be created in your Bluemix account.  
+Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services will be created - Spark and ObjectStore in your Bluemix account.  
 
 For Developers who primarily work on Bluemix, Data Science experience service can also be created from Bluemix under "Catalog -> Services". URL reference below [Bluemix -> Watson Studio](https://console.bluemix.net/catalog/services/data-science-experience)  
 
@@ -141,15 +141,19 @@ Follow the detailed steps provided in the [IBM online documentation for Watson S
 [Watson Studio Project creation video](https://youtu.be/QSttEjcHtl0)  
 [Help on creating other associated services](https://datascience.ibm.com/docs/content/getting-started/assoc-services.html)  
 
-Use the menu on the left to select ``My Projects`` and then ``Your Project Name``.  
-Click on Add notebooks (upper right) to create a notebook.
-*	Select the ``From URL`` tab.
-*	Enter a name for the notebook.
-*	Optionally, enter a description for the notebook.
-*	Enter this Notebook URL:
+In [Data Science Experience](http://datascience.ibm.com/):
+
+Use the menu on the top to select `Projects` and then `Default Project`. 
+Click on `Add notebooks` (upper right) to create a notebook.
+
+* Select the `From URL` tab.
+* Enter a name for the notebook.
+* Optionally, enter a description for the notebook.
+* Enter this Notebook URL:
 https://github.com/IBM/iot-predictive-analytics/blob/master/notebook/watson_iotfailure_prediction.ipynb
-*	Click the ``Create Notebook`` button.
-    ![png](doc/images/ipredict_dsx_notebook_create.png)
+* Select the free Anaconda runtime.
+* Click the `Create` button.
+![png](doc/images/ipredict_dsx_notebook_create.png)
 
 * Upload the sample .json, .txt Watson Studio configuration file to Watson Studio Object storage from URL below:  
     https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json  
