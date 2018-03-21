@@ -61,7 +61,7 @@ Follow these steps to setup and run this IBM Pattern. The steps are described in
 
 ## 5.1	Sign up for the Watson Studio
 
-Sign up for IBM's [Watson Studio](http://datascience.ibm.com/). By signing up for the Watson Studio, two services: ``Watson Studio-Spark`` and ``Watson Studio-ObjectStore`` will be created in your Bluemix account.  
+Sign up for IBM's [Watson Studio](http://datascience.ibm.com/). By signing up for the Watson Studio, two services: ``Apache Spark`` and ``Object Storage`` will be created in your Bluemix account.  
 
 For Developers who primarily work on Bluemix, Data Science experience service can also be created from Bluemix under "Catalog -> Services". URL reference below [Bluemix -> Watson Studio](https://console.bluemix.net/catalog/services/data-science-experience)  
 
