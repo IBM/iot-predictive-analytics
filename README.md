@@ -146,8 +146,6 @@ Click on `Add notebooks` (upper right) to create a notebook.
 https://github.com/IBM/iot-predictive-analytics/blob/master/notebook/watson_iotfailure_prediction.ipynb
 * Select the free Anaconda runtime.
 * Click the `Create` button.
-![png](doc/images/ipredict_dsx_notebook_create.png)
-
 * Upload the sample .json, .txt Watson Studio configuration file to Watson Studio Object storage from URL below:  
     https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json  
     https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.txt  
