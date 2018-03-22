@@ -149,7 +149,6 @@ Click on Add notebooks (upper right) to create a notebook.
 *	Enter this Notebook URL:
 https://github.com/IBM/iot-predictive-analytics/blob/master/notebook/watson_iotfailure_prediction.ipynb
 *	Click the ``Create Notebook`` button.
-    ![png](doc/images/ipredict_dsx_notebook_create.png)
 
 * Upload the sample .json, .txt DSX configuration file to DSX Object storage from URL below:  
     https://github.com/IBM/iot-predictive-analytics/blob/master/configuration/iotpredict_config.json  
