@@ -105,7 +105,7 @@ v.	Click on ``Next`` from the panel, choose schema and then create a ``New Table
     ![png](doc/images/ipredict_db2_create_table1.png)
 
   * The screenshot above shows ``DASH100002`` as the Schema name. Select an appropriate schema name for which you have read / write access
-  * It is important to specify the name of the DB2 table as IOT_SENSOR_DATA, as it will be referred in Data science experinece to read data from in later steps
+  * It is important to specify the name of the DB2 table as IOT_SENSOR_DATA, as it will be referred in Data science experience to read data from in later steps
 
 ### 2.3 Create DB2 Warehouse Connection in Watson Studio  
 
@@ -170,7 +170,7 @@ Click on the ``Click to Edit and Lock`` icon to edit the notebook in Jupyter not
 For more details on Creating, Editing and sharing notebooks in IBM Watson Studio refer to [Notebooks Watson Studio documentation](https://datascience.ibm.com/docs/content/analyze-data/notebooks-parent.html)
 
 You can now update the variables that refer to the .json configuration file name in the R - Jupyter Notebook.
-This step is necessary only if you had changed the name of the sample .json configuration file you had upladed earlier for any reason.  
+This step is necessary only if you had changed the name of the sample .json configuration file you had uploaded earlier for any reason.  
 
 ![png](doc/images/ipredict_set_json_filename.png)
 
