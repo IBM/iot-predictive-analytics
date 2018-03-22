@@ -1,4 +1,6 @@
-# 1 Equipment Failure Prediction using IoT Sensor data
+# Equipment Failure Prediction using IoT Sensor data
+
+> Data Science Experience is now Watson Studio. Although some images in this code pattern may show the service as Data Science Experience, the steps and processes will still work.
 
 This IBM Pattern is intended for anyone who wants to experiment, learn, enhance and implement a new method for Predicting Equipment failure using IoT Sensor data. Sensors mounted on devices like IoT devices, Automated manufacturing like Robot arms, Process monitoring and Control equipment etc., collect and transmit data on a continuous basis which is Time stamped.
   
@@ -34,84 +36,78 @@ When you have completed this pattern, you will understand how to
 4.	Computations of key statistics that help evaluate the Predictive capability of the models
 5.	Repeat the experiment by altering the Configuration parameters by rerunning the models
 
-# 2	Included Components
+# Included Components
 
-* [IBM Watson Studio](https://www.ibm.com/bs-en/marketplace/data-science-experience): Analyze data using Python, Jupyter Notebook and RStudio in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
+* [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio): Analyze data using Python, Jupyter Notebook and RStudio in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
 * [DB2 Warehouse on cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud): IBM Db2 Warehouse on Cloud is a fully-managed, enterprise-class, cloud data warehouse service. Powered by IBM BLU Acceleration.
-* [Bluemix Object Storage](https://console.ng.bluemix.net/catalog/services/object-storage/?cm_sp=dw-bluemix-_-code-_-devcenter): A Bluemix service that provides an unstructured cloud data store to build and deliver cost effective apps and services with high reliability and fast speed to market.
+* [IBM Cloud Object Storage](https://console.ng.bluemix.net/catalog/services/object-storage/?cm_sp=dw-bluemix-_-code-_-devcenter): An IBM Cloud service that provides an unstructured cloud data store to build and deliver cost effective apps and services with high reliability and fast speed to market.
 
-# 3	Featured Technologies
+# Featured Technologies
 
 * [Analytics](https://developer.ibm.com/code/technologies/analytics?cm=IBMCode-_--_-featured_technologies-_-analytics): Finding patterns in data to derive information.
 * [Data Science](https://developer.ibm.com/code/technologies/data-science?cm=IBMCode-_--_-featured_technologies-_-data-science):Systems and scientific methods to analyze structured and unstructured data in order to extract knowledge and insights.
 
-# 4	Watch the Video  
+# Watch the Video  
 
 [![](http://img.youtube.com/vi/k8uPYd3jUFs/0.jpg)](https://youtu.be/k8uPYd3jUFs)
 
-# 5 Steps
+# Steps
 
-Follow these steps to setup and run this IBM Pattern. The steps are described in detail below.
-1. [Sign up for the Watson Studio](#1-sign-up-for-the-data-science-experience)
-2. [Create Bluemix services](#2-create-bluemix-services)
-3. [Create the Jupyter notebook](#3-create-jupyter-notebook)
-4. [Add the data and configuraton file](#4-add-data-config-file)
-5. [Run the notebook](#5-run-notebook)
-6. [Download the results](#6-download-results)
+Follow these steps to setup and run this IBM Code Pattern. The steps are described in detail below.
+1. [Sign up for the Watson Studio](#1-sign-up-for-watson-studio)
+2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
+3. [Create the Jupyter notebook](#3-create-the-jupyter-notebook)
+4. [Add the data and configuraton file](#4-add-the-data-and-configuration-file)
+5. [Run the notebook](#5-run-the-notebook)
+6. [View the results](#6-view-the-results)
 
-## 5.1	Sign up for the Watson Studio
+## 1. Sign up for the Watson Studio
 
-Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services will be created - Spark and ObjectStore in your Bluemix account.  
-
-For Developers who primarily work on Bluemix, Data Science experience service can also be created from Bluemix under "Catalog -> Services". URL reference below [Bluemix -> Watson Studio](https://console.bluemix.net/catalog/services/data-science-experience)  
+Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services will be created - Spark and ObjectStore in your IBM Cloud account.  
 
 ![png](doc/images/ipredict_dsx_experience_create.png)  
 
+## 2. Create IBM Cloud services
 
-## 5.2	Create Bluemix services
+### 2.1 Download sample data  
 
-### 5.2.1  Download sample data  
-
-Before creating Bluemix Services, download the [sample data file](https://github.com/IBM/iot-predictive-analytics/blob/master/data/iot_sensor_dataset.csv) from github and store it in your Computer local folder. This will be used to upload to database in the next steps.
+Download the [sample data file](https://github.com/IBM/iot-predictive-analytics/blob/master/data/iot_sensor_dataset.csv) from github and store it in your a local folder. This will be used to upload to database in the next steps.
 
 Once you are familiar with the entire flow of this Pattern, you can use your own data for analysis. But ensure that your data format is exactly same as provided in the sample data file.
 
-### 5.2.2  Create a DB2 Warehouse on IBM Cloud
+### 2.2 Create a DB2 Warehouse on IBM Cloud
 
-If you are not already familiar with how to create, access data from Data store in Watson Studio, get yourself familiarised by following this documentation.  
-[Add data to project](https://datascience.ibm.com/docs/content/manage-data/add-data-project.html)
+If you are not already familiar with how to create, access data from data store in Watson Studio, get yourself familiarised by following this documentation. [Add data to project](https://datascience.ibm.com/docs/content/manage-data/add-data-project.html)
 
-Topics related to Data creation and access that will be specifically helpful in this Pattern are as below  
+Topics related to Data creation and access that will be specifically helpful in this Pattern are as below:
+
 * [Create connections to databases](https://datascience.ibm.com/docs/content/manage-data/dw08.html)  
 * [Load and access data in a notebook](https://datascience.ibm.com/docs/content/analyze-data/load-and-access-data.html?linkInPage=true)  
   
-  
-i.	Click on ``DB2 Warehouse on Cloud`` Service Instance on Bluemix Dashboard. Click ``Open`` to launch the Dashboard.
+i. Click on ``DB2 Warehouse on Cloud`` service in the IBM Cloud Dashboard. Click ``Open`` to launch the Dashboard.
 [DB2 Warehouse on Cloud](https://console.bluemix.net/catalog/services/db2-warehouse-on-cloud)  
 ![png](doc/images/ipredict_db2_whse_oncloud.png)  
 
   Note: Data will loaded into a DB2 database instead of reading directly from the .csv file.
-  This is done to ensure end to end consistency of Solution architecture when combined with other IoT IBM Patterns.  
+  This is done to ensure end to end consistency of solution architecture when combined with other IoT IBM Patterns.  
 
 ii.	Choose an appropriate name for the DB2 Warehouse ``Service Name`` and choose  ``Free`` Pricing Plan. Click on Create.
   
 ![png](doc/images/ipredict_db2_service_create.png)  
   
-iii.	Click on DB2 Warehouse on cloud instance on ``Bluemix Dashboard``. You must be able to see the DB2 Warehouse service you created in the previous step. Click on the service name from the list. Once you are in the Service details page, click on ``Open`` button.
+iii.	Click on DB2 Warehouse on cloud instance on ``IBM Cloud Dashboard``. You must be able to see the DB2 Warehouse service you created in the previous step. Click on the service name from the list. Once you are in the Service details page, click on ``Open`` button.
 ![png](doc/images/ipredict_db2_object_storage.png)  
-
 
 iv.	``Load data`` which is downloaded in step 5.2.1 into a DB2 Warehouse table by selecting the sample data from ``My Computer -> browse files``.
     ![png](doc/images/ipredict_db2_browse_file.png)
   
 v.	Click on ``Next`` from the panel, choose schema and then create a ``New Table``.
     ![png](doc/images/ipredict_db2_create_table1.png)
-  
 
   * The screenshot above shows ``DASH100002`` as the Schema name. Select an appropriate schema name for which you have read / write access
   * It is important to specify the name of the DB2 table as IOT_SENSOR_DATA, as it will be referred in Data science experinece to read data from in later steps
 
-### 5.2.3 Create DB2 Warehouse Connection in Watson Studio  
+### 2.3 Create DB2 Warehouse Connection in Watson Studio  
 
 We need to link the data we just uploaded into the DB2 Warehouse database with Watson Studio in order to run the analysis.  
 Below are the steps to add a connection to access the data in Watson Studio Python Jupyter notebook.  
@@ -134,14 +130,11 @@ viii. Click on ``Connection tab`` the check box next to the DB2 warehouse Data c
   
   ![png](doc/images/ipredict_db2_create_conn3.png)  
 
-  
-## 5.3	Create the Python Jupyter Notebook
-Create a New Project in Watson Studio.  
-Follow the detailed steps provided in the [IBM online documentation for Watson Studio Project creation](https://datascience.ibm.com/docs/content/analyze-data/creating-notebooks.html)  
-[Watson Studio Project creation video](https://youtu.be/QSttEjcHtl0)  
-[Help on creating other associated services](https://datascience.ibm.com/docs/content/getting-started/assoc-services.html)  
+## 3. Create the Jupyter notebook
 
-In [Data Science Experience](http://datascience.ibm.com/):
+First create a new project in Watson Studio. Follow the detailed steps provided in the [IBM online documentation for Watson Studio Project creation](https://datascience.ibm.com/docs/content/analyze-data/creating-notebooks.html), or watch a video on using [Watson Studio to create a project](https://youtu.be/QSttEjcHtl0).
+
+In [Watson Studio](http://dataplatform.ibm.com/):
 
 Use the menu on the top to select `Projects` and then `Default Project`. 
 Click on `Add notebooks` (upper right) to create a notebook.
@@ -169,7 +162,7 @@ https://github.com/IBM/iot-predictive-analytics/blob/master/notebook/watson_iotf
   Now you must be able to see the uploaded files listed under "My Projects -> Your Project Name -> Assets"  tab  
   ![png](doc/images/ipredict_dsx_fileassets.png)
   
-## 5.4	Add the configuration and data access details
+## 4. Add the data and configuraton file
 Fix-up configuration parameter .json file name and values:
 
 Go to the Notebook in Watson Studio by navigating to "My Projects -> IoT Predictive"
@@ -236,20 +229,18 @@ Delete the second part, that calls the function and reads the data. This is done
 
 Refer to screen shot above for details.  
 For more details, revisit the documentation help links provided in beginning of section 5.2.2  
- 
 
-  
 #### Add the data and configuration to the notebook
+
 Use ``Find and Add Data`` (look for the ``10/01`` icon) and its ``Connections`` tab. You must be able to see your database connection created earlier. From there you can click ``Insert to Code`` under the 'Data connection' list and add ibm DBR code with connection credentials to the flow.
 
 ![png](doc/images/ipredict_insert_dataconn.png)
 
 Note: If you don't have your own data and configuration files, you can reuse our example in the "Read IoT Sensor data from database" section. Look in the /data/iot_sensor_dataset.csv directory for data file.
-  
-![png](doc/images/ipredict_insert_read_data_func.png)
-  
 
-# 6	Run the notebook
+![png](doc/images/ipredict_insert_read_data_func.png)
+
+## 5. Run the notebook
 When a notebook is executed, what is actually happening is that each code cell in
 the notebook is executed, in order, from top to bottom.
 
@@ -274,7 +265,8 @@ There are several ways to execute the code cells in your notebook:
     panel. Here you can schedule your notebook to be executed once at some future
     time, or repeatedly at your specified interval.
 
-# 7	View the results
+## 6. View the results
+
 The notebook outputs the results in the Notebook which can be copied to clipboard
 The Training model Prediction accuracy is output in section 5.2
 The overall prediction accuracy is output as a percentage
@@ -290,10 +282,10 @@ Overall accuracy percentage gives the overall Prediction performance of the mode
 Sensitivity and Specificity of the model is also calculated along with absolute values of False positives and False Negatives to give the Data Scientist / Analyst an idea of predictive accuracy in the model.  
 It can be checked if these are within thresholds for the specific application of the model or IoT equipment.  
   
-# 8 Troubleshooting
+# Troubleshooting
 
 [See DEBUGGING.md](DEBUGGING.md)
   
-# 9 License
+# License
 
 [Apache 2.0](LICENSE)
