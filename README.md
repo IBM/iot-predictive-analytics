@@ -54,16 +54,16 @@ When you have completed this pattern, you will understand how to
 # Steps
 
 Follow these steps to setup and run this IBM Code Pattern. The steps are described in detail below.
-1. [Sign up for the Watson Studio](#1-sign-up-for-watson-studio)
+1. [Sign up for Watson Studio](#1-sign-up-for-watson-studio)
 2. [Create IBM Cloud services](#2-create-ibm-cloud-services)
 3. [Create the Jupyter notebook](#3-create-the-jupyter-notebook)
 4. [Add the data and configuraton file](#4-add-the-data-and-configuration-file)
 5. [Run the notebook](#5-run-the-notebook)
 6. [View the results](#6-view-the-results)
 
-## 1. Sign up for the Watson Studio
+## 1. Sign up for Watson Studio
 
-Sign up for IBM's [Watson Studio](http://datascience.ibm.com/). By signing up for Watson Studio, an Object Storage service will be created in your IBM Cloud account.  
+Sign up for IBM's [Watson Studio](https://dataplatform.cloud.ibm.com/). By signing up for Watson Studio, an Object Storage service will be created in your IBM Cloud account.  
 
 ![png](doc/images/ipredict_dsx_experience_create.png)  
 
