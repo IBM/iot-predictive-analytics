@@ -22,7 +22,7 @@ When you have completed this pattern, you will understand how to
 ![png](doc/images/ipredict_arch_flow.png)
 
 #### Steps:
-1.	User signs up for IBM Data Science experience
+1.	User signs up for IBM Watson Studio
 2.	User loads the sample IoT sensor Time series data to database
 3.	A configuration file holds all the key parameters for running the IoT Time series prediction algorithm
 4.	The prediction algorithm written in Python 2.0 Jupyter notebook uses the Configuration parameters and Sensor data from DB
@@ -63,7 +63,7 @@ Follow these steps to setup and run this IBM Code Pattern. The steps are describ
 
 ## 1. Sign up for the Watson Studio
 
-Sign up for IBM's [Data Science Experience](http://datascience.ibm.com/). By signing up for the Data Science Experience, two services will be created - Spark and ObjectStore in your IBM Cloud account.  
+Sign up for IBM's [Watson Studio](http://datascience.ibm.com/). By signing up for Watson Studio, an Object Storage service will be created in your IBM Cloud account.  
 
 ![png](doc/images/ipredict_dsx_experience_create.png)  
 
